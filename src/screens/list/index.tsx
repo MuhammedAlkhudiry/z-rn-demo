@@ -5,16 +5,13 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import ListData from '../../utils/fake-data';
 import {ListItem} from './components/item';
 
-//
-//
-
 export interface IListItem {
-  id: string;
+  id: number;
   name: string;
-  description: String;
+  description: string;
   price: string;
-  salePrice: any;
-  brand: String;
+  salePrice: string | undefined;
+  brand: string;
 }
 
 const ListScreen = () => {
