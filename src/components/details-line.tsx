@@ -6,7 +6,8 @@ import {Typography} from './typography';
 export const DetailsLine: React.FC<{
   label?: React.ReactNode;
   children: string;
-}> = ({label, children}) => {
+  color?: string;
+}> = ({label, children, color}) => {
   return (
     <DetailsLineContainer>
       <Typography
@@ -17,7 +18,7 @@ export const DetailsLine: React.FC<{
         {label}
       </Typography>
 
-      <DetailsLineContent>{children}</DetailsLineContent>
+      <DetailsLineContent color={color}>{children}</DetailsLineContent>
     </DetailsLineContainer>
   );
 };
@@ -27,11 +28,11 @@ const DetailsLineContainer = styled.View({
   flexDirection: 'row',
 });
 
-const DetailsLineContent = styled(Typography)({
+const DetailsLineContent = styled(Typography)((props: {color?: string}) => ({
   flex: 1,
   textAlign: 'right',
-  color: '#545454',
-});
+  color: props.color ?? '#545454',
+}));
 
 DetailsLineContent.defaultProps = {
   fontSize: 14,

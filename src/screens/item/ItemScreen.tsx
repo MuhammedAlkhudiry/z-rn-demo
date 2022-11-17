@@ -54,7 +54,9 @@ export const ItemScreen = () => {
           <DetailsTitle>Details</DetailsTitle>
           <DetailsLine label="Brand">{item.brand}</DetailsLine>
           <DetailsLine label="Color">{SPEC_1}</DetailsLine>
-          <DetailsLine label="SKU">{SPEC_2}</DetailsLine>
+          <DetailsLine label="SKU" color={'#000000'}>
+            {SPEC_2}
+          </DetailsLine>
 
           <Typography weight="medium" />
           <Typography color={'#000000'} weight="medium">
