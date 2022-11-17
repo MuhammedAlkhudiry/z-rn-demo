@@ -38,7 +38,7 @@ const Stack = () => {
       <RootStack.Screen
         name="ListScreen"
         component={ListScreen}
-        options={{title: 'Items'}}
+        options={{title: 'Items', headerTitleAlign: 'center'}}
       />
       <RootStack.Screen
         name="ItemScreen"
