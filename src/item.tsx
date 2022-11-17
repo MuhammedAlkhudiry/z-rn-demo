@@ -12,9 +12,9 @@ import {Typography} from './components/typography';
 import {DetailsLine} from './components/details-line';
 import {DetailsTitle} from './components/details-title';
 import {Cart} from './components/cart';
-
-//
-//
+import useAppNavigation from './hooks/useAppNavigation';
+import useAppRoute from './hooks/useAppRoute';
+import ItemPrice from './components/ItemPrice';
 
 const SPEC_1 = faker.color.human();
 const SPEC_2 = faker.vehicle.vin();

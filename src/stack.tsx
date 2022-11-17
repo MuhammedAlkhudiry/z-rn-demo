@@ -11,8 +11,12 @@ import {ThemeFont} from './components/typography';
 
 export type RootStackParamList = {
   ListScreen: undefined;
-  ItemScreen?: IListItem;
+  ItemScreen: {
+    item: IListItem;
+  };
 };
+
+export type ScreenNames = keyof RootStackParamList;
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
