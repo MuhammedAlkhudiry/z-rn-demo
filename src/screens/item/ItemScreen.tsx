@@ -24,7 +24,6 @@ export const ItemScreen = () => {
   const {
     params: {item},
   } = useAppRoute<'ItemScreen'>();
-  const [quantity, setQuantity] = useState<number>(5);
 
   nav.setOptions({
     title: item.name,
@@ -66,7 +65,7 @@ export const ItemScreen = () => {
         </Container>
       </ScrollView>
 
-      <Cart quantity={quantity} update={setQuantity} />
+      <Cart />
     </>
   );
 };

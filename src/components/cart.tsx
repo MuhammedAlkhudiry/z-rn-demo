@@ -7,7 +7,7 @@ import {Typography} from './typography';
 import {Alert} from 'react-native';
 import React from 'react';
 
-export const Cart: React.FC<any> = ({quantity, update}) => {
+export const Cart: React.FC<any> = () => {
   const insets = useSafeAreaInsets();
 
   return (
@@ -18,7 +18,7 @@ export const Cart: React.FC<any> = ({quantity, update}) => {
         <Typography color="white">Buy Now</Typography>
       </BuyButton>
 
-      <CartQuantity quantity={quantity} update={update} />
+      <CartQuantity />
     </CartContainer>
   );
 };

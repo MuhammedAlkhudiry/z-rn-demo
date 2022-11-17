@@ -1,20 +1,16 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import React, {useState} from 'react';
 import styled from '@emotion/native';
 
 import {Typography} from './typography';
 
-//
-//
+export const CartQuantity = () => {
+  const [quantity, setQuantity] = useState<number>(5);
 
-export const CartQuantity: React.FC<{
-  quantity: any;
-  update: Dispatch<SetStateAction<number>>;
-}> = ({quantity, update}) => {
   return (
     <QuantityContainer>
       <React.Fragment>
         <QuantityButton
-          onPress={() => update(quantity + 1)}
+          onPress={() => setQuantity(quantity + 1)}
           underlayColor="#EDEBF2">
           <Typography color="#522973">+</Typography>
         </QuantityButton>
@@ -24,7 +20,7 @@ export const CartQuantity: React.FC<{
         </Typography>
 
         <QuantityButton
-          onPress={() => update(quantity + 1)}
+          onPress={() => setQuantity(quantity + 1)}
           underlayColor="#EDEBF2">
           <Typography color="#522973">-</Typography>
         </QuantityButton>
@@ -32,9 +28,6 @@ export const CartQuantity: React.FC<{
     </QuantityContainer>
   );
 };
-
-//
-//
 
 const QuantityButton = styled.TouchableHighlight({
   alignItems: 'center',
