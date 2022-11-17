@@ -15,7 +15,7 @@ export const CartQuantity = () => {
           <Typography color="#522973">+</Typography>
         </QuantityButton>
 
-        <Typography style={{textAlign: 'center', flex: 1}}>
+        <Typography color={'#000000'} style={{textAlign: 'center', flex: 1}}>
           {quantity}
         </Typography>
 

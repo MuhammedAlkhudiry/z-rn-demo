@@ -3,9 +3,6 @@ import styled from '@emotion/native';
 
 import {Typography} from './typography';
 
-//
-//
-
 export const DetailsLine: React.FC<{
   label?: React.ReactNode;
   children: string;
@@ -24,9 +21,6 @@ export const DetailsLine: React.FC<{
     </DetailsLineContainer>
   );
 };
-
-//
-//
 
 const DetailsLineContainer = styled.View({
   marginVertical: 5,
