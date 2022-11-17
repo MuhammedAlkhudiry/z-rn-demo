@@ -7,9 +7,6 @@ import {Typography} from './typography';
 import {Alert} from 'react-native';
 import React from 'react';
 
-//
-//
-
 export const Cart: React.FC<any> = ({quantity, update}) => {
   const insets = useSafeAreaInsets();
 
@@ -25,9 +22,6 @@ export const Cart: React.FC<any> = ({quantity, update}) => {
     </CartContainer>
   );
 };
-
-//
-//
 
 const CartContainer = styled(Container)({
   backgroundColor: 'white',
