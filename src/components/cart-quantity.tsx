@@ -20,7 +20,8 @@ export const CartQuantity = () => {
         </Typography>
 
         <QuantityButton
-          onPress={() => setQuantity(quantity + 1)}
+          disabled={quantity === 1}
+          onPress={() => setQuantity(Math.max(quantity - 1, 1))}
           underlayColor="#EDEBF2">
           <Typography color="#522973">-</Typography>
         </QuantityButton>
