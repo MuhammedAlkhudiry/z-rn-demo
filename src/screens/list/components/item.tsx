@@ -15,10 +15,7 @@ import { Avatar } from '../../../components/avatar';
 const thumbnailSize = 600;
 
 export const ListItem: React.FC<{item: IListItem}> = ({item}) => {
-  const nav =
-    useNavigation<
-      NativeStackNavigationProp<RootStackParamList, 'ListScreen'>
-    >();
+  const nav = useAppNavigation();
 
   return (
     <ListItemContainer onPress={() => nav.navigate('Itemscreen', item)}>

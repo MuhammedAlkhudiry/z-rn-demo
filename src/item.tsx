@@ -24,12 +24,11 @@ const SPEC_4 = faker.datatype.float({min: 0.1, max: 10, precision: 0.1});
 //
 
 export const Item = () => {
-  const nav =
-    useNavigation<
-      NativeStackNavigationProp<RootStackParamList, 'ListScreen'>
-    >();
-  const {params} = useRoute<RouteProp<RootStackParamList, 'ItemScreen'>>();
-
+  const nav = useAppNavigation();
+  const {width} = useWindowDimensions();
+  const {
+    params: {item},
+  } = useAppRoute<'ItemScreen'>();
   const [quantity, setQuantity] = useState<number>(5);
 
   if (!params) {
