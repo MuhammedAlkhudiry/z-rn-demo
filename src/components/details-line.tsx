@@ -12,7 +12,11 @@ export const DetailsLine: React.FC<{
 }> = ({label, children}) => {
   return (
     <DetailsLineContainer>
-      <Typography fontSize={14} style={{marginRight: 16}} weight="medium">
+      <Typography
+        color="#545454"
+        fontSize={14}
+        style={{marginRight: 16}}
+        weight="medium">
         {label}
       </Typography>
 
@@ -32,6 +36,7 @@ const DetailsLineContainer = styled.View({
 const DetailsLineContent = styled(Typography)({
   flex: 1,
   textAlign: 'right',
+  color: '#545454',
 });
 
 DetailsLineContent.defaultProps = {
