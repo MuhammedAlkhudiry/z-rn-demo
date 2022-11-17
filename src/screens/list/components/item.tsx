@@ -1,16 +1,12 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import styled from '@emotion/native';
 import {getImage} from '../../../utils/image';
 import {Typography} from '../../../components/typography';
-import {RootStackParamList} from '../../../stack';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {IListItem} from '../index';
-import { Avatar } from '../../../components/avatar';
-
-//
-//
+import {Avatar} from '../../../components/avatar';
+import useAppNavigation from '../../../hooks/useAppNavigation';
+import ItemPrice from '../../../components/ItemPrice';
 
 const thumbnailSize = 600;
 
@@ -18,42 +14,38 @@ export const ListItem: React.FC<{item: IListItem}> = ({item}) => {
   const nav = useAppNavigation();
 
   return (
-    <ListItemContainer onPress={() => nav.navigate('Itemscreen', item)}>
-      <Avatar style={styles.image} source={{uri: getImage(thumbnailSize, item.id)}} />
+    <ListItemContainer onPress={() => nav.navigate('ItemScreen', {item})}>
+      <Avatar
+        style={styles.image}
+        source={{uri: getImage(thumbnailSize, item.id)}}
+      />
 
       <View style={styles.flex}>
-        <Typography weight="medium">{item.name}</Typography>
-        {!item.salePrice ? (
-          <Typography style={item.salePrice ? styles.discounted : undefined}>SAR {item.price}</Typography>
-        ) : null}
+        <Typography color={'#000000'} weight="medium">
+          {item.name}
+        </Typography>
 
-        {item.salePrice ? (
-          <Typography color="#DA2121">
-            <Typography style={item.salePrice ? styles.discounted : undefined}>SAR {item.price}</Typography>
-            {'  '}SAR {item.salePrice}
-          </Typography>
-        ) : null}
+        <ItemPrice item={item} />
 
-        <Typography fontSize={14} color="#545454">Brand: {item.name}</Typography>
+        <Typography fontSize={14} color="#545454">
+          Brand: {item.name}
+        </Typography>
       </View>
     </ListItemContainer>
   );
 };
 
-//
-//
-
-const ListItemContainer = styled.TouchableOpacity({
-  paddingTop: 10,
-  paddingBottom: 10,
-  paddingHorizontal: 25,
-  borderBottomColor: 'rgba(0,0, 0, 0.05)',
-  borderBottomWidth: 1,
-  flexDirection: 'row',
-});
-
-//
-//
+// using memo to prevent re-rendering for extra performance (I did not test how much it helps, in real project I would test it)
+const ListItemContainer = memo(
+  styled.TouchableOpacity({
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingHorizontal: 25,
+    borderBottomColor: 'rgba(0,0, 0, 0.05)',
+    borderBottomWidth: 1,
+    flexDirection: 'row',
+  }),
+);
 
 const styles = StyleSheet.create({
   flex: {
@@ -61,10 +53,7 @@ const styles = StyleSheet.create({
   },
   image: {
     marginTop: 8,
-    marginRight: 16,
-  },
-  discounted: {
-    textDecorationLine: 'line-through',
+    marginRight: 12,
   },
   sale: {
     color: '#DA2121',
