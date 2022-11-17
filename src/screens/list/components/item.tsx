@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import styled from '@emotion/native';
 import {getImage} from '../../../utils/image';
 import {Typography} from '../../../components/typography';
-import {IListItem} from '../index';
+import {IListItem} from '../ListScreen';
 import {Avatar} from '../../../components/avatar';
 import useAppNavigation from '../../../hooks/useAppNavigation';
 import ItemPrice from '../../../components/ItemPrice';

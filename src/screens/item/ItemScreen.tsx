@@ -1,24 +1,24 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {ScrollView, useWindowDimensions} from 'react-native';
 import styled from '@emotion/native';
 
 import {faker} from '@faker-js/faker';
-import {getImage} from './utils/image';
-import {Container} from './components/container';
-import {Typography} from './components/typography';
-import {DetailsLine} from './components/details-line';
-import {DetailsTitle} from './components/details-title';
-import {Cart} from './components/cart';
-import useAppNavigation from './hooks/useAppNavigation';
-import useAppRoute from './hooks/useAppRoute';
-import ItemPrice from './components/ItemPrice';
+import {getImage} from '../../utils/image';
+import {Container} from '../../components/container';
+import {Typography} from '../../components/typography';
+import {DetailsLine} from '../../components/details-line';
+import {DetailsTitle} from '../../components/details-title';
+import {Cart} from '../../components/cart';
+import useAppNavigation from '../../hooks/useAppNavigation';
+import useAppRoute from '../../hooks/useAppRoute';
+import ItemPrice from '../../components/ItemPrice';
 
 const SPEC_1 = faker.color.human();
 const SPEC_2 = faker.vehicle.vin();
 const SPEC_3 = faker.commerce.product();
 const SPEC_4 = faker.datatype.float({min: 0.1, max: 10, precision: 0.1});
 
-export const Item = () => {
+export const ItemScreen = () => {
   const nav = useAppNavigation();
   const {width} = useWindowDimensions();
   const {

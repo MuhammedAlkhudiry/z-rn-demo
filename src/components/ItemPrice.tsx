@@ -1,6 +1,6 @@
 import {Typography} from './typography';
 import React from 'react';
-import {IListItem} from '../screens/list';
+import {IListItem} from '../screens/list/ListScreen';
 import {StyleSheet} from 'react-native';
 
 // I usually use types but for the sake of consistency with the rest of the code, I'm using interfaces
