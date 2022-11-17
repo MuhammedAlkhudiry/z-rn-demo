@@ -4,6 +4,8 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {Container} from './container';
 import {CartQuantity} from './cart-quantity';
 import {Typography} from './typography';
+import {Alert} from 'react-native';
+import React from 'react';
 
 //
 //
